@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Task App</title>
+  <link href="styles/styles.css" rel="stylesheet">
+  <link href="images/favicon.png?v=1" rel="icon">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1 class="header__title">Task App</h1>
+      <h2 class="header__subtitle">React Component, props, state</h2>
+    </div>
+  </div>
+
+  <div class="actions">
+    <div class="actions__container">
+      <input id="search-text" class="input" type="text" placeholder="Filter Task">
+      <label class="checkbox">
+        <input type="checkbox" id="hide-completed"> Hide completed
+      </label>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="Task">
+      <h2 class="list-title">You have 0 Task left</h2>
+      <p class="empty-message">There are no tasks to show</p>
+      <label class="list-item">
+        <div class="list-item__container"><input type="checkbox">
+          <span>task1 1</span>
+        </div>
+        <button class="button button--text">remove</button>
+      </label>
+    </div>
+    <form id="new-task">
+      <input type="text" class="input" placeholder="Something" name="text">
+      <button class="button">Add Task</button>
+    </form>
+  </div>
+
+</body>
+
+</html>
