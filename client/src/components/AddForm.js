@@ -2,9 +2,15 @@ import React from 'react';
 
 const AddForm = () => {
   return (
-    <div>
-      AddForm
-    </div>
+    <form id="new-task">
+      <input 
+        type="text" 
+        className="input" 
+        placeholder="Something" 
+        name="text"
+      />
+      <button className="button">Add Task</button>
+    </form>
   )
 }
 
