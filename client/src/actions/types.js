@@ -1,2 +1,9 @@
 export const GET_DATA = 'GET_DATA';
 export const LOADING = 'LOADING';
+export const ADD_DATA = 'ADD_DATA';
+export const GET_ERROR = 'GET_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const REMOVE_DATA = 'REMOVE_DATA';
+export const EDIT_DATA = 'EDIT_DATA';
+export const FILTER_DATA = 'FILTER_DATA';
+export const HIDE_COMPLETED = 'HIDE_COMPLETED';

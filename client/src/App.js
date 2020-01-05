@@ -1,22 +1,51 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { getData } from './actions/tasks';
 
 import Header from './components/Header';
 import Actions from './components/Actions';
 import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
 
-const App = () => {
-  return (
-    <Fragment>
-      <Header />
-      <Actions />
-      <div className="container">
-        <Tasks />
-        <AddForm />
+class App extends Component {
+  componentDidMount(){
+    this.props.getData();
+  }
+  renderLoading = () => {
+    return (
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <p>Loading...</p>
       </div>
-    </Fragment>
-  )
+    )
+  }
+  render() {
+    const { loading } = this.props;
+    return (
+      <Fragment>
+        <Header />
+        <Actions />
+        {
+          loading
+            ? this.renderLoading()
+            : (
+              <div className="container">
+                <Tasks />
+                <AddForm />
+              </div>
+            )
+        }
+      </Fragment>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  loading: state.tasks.loading
+});
+
+const mapDispatchToProps = dispatch => ({
+  getData: () => dispatch(getData())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
